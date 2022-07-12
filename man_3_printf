@@ -1,128 +1,30 @@
-.\" _printf man page
-.\"
-.\"
-.\"
-.\"
-.\"
-.TH _PRINTF "Tueday July 12 2022" "0.1" "Library functions manual"
+﻿man_3_printf
 
-.SH NAME
-.SH ""
+_printf - Man page
 
-.B _printf
-- custom version for printf function.
+Name
+	_printf - Produce output according to a format.
 
-.SH SYNOPSIS
-.SH ""
+Synopsis
+	#include <stdio.h>
+	#include <stdarg.h>
+	int _printf(const char *format, ...);
 
-#include "main.h"
+Description
+	The function produces output according to a format. Format controls the output just like in the printf function from the standard library.
+	- %c a character
+	- %s a string
+	- %% a single %
+	- %d a decimal (base 10) number
+	- i An integer in base 10
 
-int _printf(const char *[FORMAT], ...);
+Return Value
+	On success, this function returns the number of characters printed(excluding the null byte used to end output to strings).
+Format
+	Each conversion specifier is introduced by the % character and ends with a conversion specifier (c or s or d or i). If %% is passed, % is printed.
 
-.SH DESCRIPTION
-.SH ""
-
-The printf function sends formatted output to stdout.
-This custom _printf() for learning purposes was developed Udoka Christopher, Hope Akpabio and adapted and updated by Eziagor Chiagozie (Cohort 7) as a project in ALX.
-_printf() function format string is a character string, beginning and ending in its initial shift state, if any.
-These arguments are placed using the percentage '%' operator
-
-.SS Compilation
-
-.P
-.RS
-#include "main.h"
-
-$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
-$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debbuging)
-.RE
-
-.SS Printing
-.RS
-
-int _printf(const char *[FORMAT], ...);
-
-FORMAT is the string that takes n specifier followed by a '%'
-symbol. i.e. "Hello this is %s from %d cohort". '...' is the variadic \
-(any type of variable).
-
-.SS Example
-
-.RS
-
-.B Input
-.PP
-_printf("Hello this is %s from %d cohort\\n\\", 33);
-.PP
-.B Output
-.PP
-Hello this is %s from %d cohort
-.RE
-
-.SS Return Value
-
-Return value is a n number of characters except NULL
-
-.SH FLAG SPECIFIERS
-.SH ""
-
-custom and non-custom specifier modifiers
-
-.SH THE LENGTH MODIFIERS
-.SH ""
-
-Length modifiers.
-
-.SH THE CONVERSION SPECIFIERS
-.SH ""
-
-.RS
-Current arguments handled by conversion specifiers:
-
-.IT
-.B %
-- % symbol is set without argument and conversion specification has to be'%%'.
-
-.IT
-.B c
-- integer or char argument converted to unsigned char.
-
-.IT
-.B d, i
-- int argument is converted to signed decimal integer.
-
-.IT
-.B s
-- string argument. _printf handles s conversion specifier if the argument value
- is not a pointer to a literal string. \
-
-.IT
-.B o, u, x, X
-- unsigned int argument converted to unsigned octal (o), unsigned decimal (u),
-unsigned hexidecimal notation (x) for lower case and (X) for upper case
-
-.IT
-.B b
-- The unsigned int argument is converted to binary.
-
-.IT
-.B p
-- The pointer is printed in hexidecimal format preceded by '0x'.
-
-.IT
-.B r, R
-- 'r' prints string in reverse. 'R' prints encrypted rot13.
-
-.IT
-.B S
-- ascii <32 & >127 has to appear in the argument string. converted to
-hexadecimal preceded by \x
-
-.RE
-
-.P
-
-.SH "AUTHORS"
-.SH ""
-
+Example
+	To print character '1', string "three" and length 39;
+	_printf("%c %s %d %i", '1', "three", 39, 39);
+Authors
 Aisien Joel and Abdulahi Salad Adan
