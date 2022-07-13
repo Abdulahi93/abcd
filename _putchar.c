@@ -3,7 +3,6 @@
 /**
  * _puts - prints a string with newline
  * @str: the string to print
- *
  * Return:( str-a)
  */
 int _puts(char *str)

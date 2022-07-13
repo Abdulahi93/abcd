@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * init_params - function that clears struct fields and resets buf
- * @params: the parameters struct
- * @ap: the argument pointer
- * Return: void
+ * init_params - function that clears struct fields and resets buf.
+ * @params: the parameters struct.
+ * @ap: the argument pointer.
+ * Return: void.
  */
 
 void init_params(params_t *params, va_list ap)
